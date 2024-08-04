@@ -1,0 +1,57 @@
+# This is the configuration file for catnip.
+# Here you can configure the stat colors,
+# stat names, stat icons and more!
+#
+# https://github.com/iinsertNameHere/catnip
+
+
+
+##############################################
+##          FetchInfo stats Config          ##
+##############################################
+[stats]
+username  = {icon = " ", name = "nme", color = "(RD)"}
+hostname  = {icon = " ", name = "hst", color = "(RD)"}
+
+# sep_1 = ""
+
+distro    = {icon = " ", name = "dst", color = "(MA)"}
+kernel    = {icon = " ", name = "ker", color = "(MA)"}
+desktop   = {icon = " ", name = "twm", color = "(MA)"}
+terminal  = {icon = " ", name = "trm", color = "(MA)"}
+shell     = {icon = " ", name = "shl", color = "(MA)"}
+
+# sep_2 = ""
+
+uptime    = {icon = " ", name = "upt", color = "(BE)"}
+
+# cpu       = {icon = " ", name = "cpu", color = "(RD)"}
+# disk_0    = {icon = " ", name = "disk", color = "(GN)"}
+# memory    = {icon = " ", name = "memory", color = "(YW)"}
+
+sep_3 = ""
+
+colors    = {icon = " ", name = "clr", color = "!DT!", symbol = ""}
+
+
+
+##############################################
+##               Misc Config                ##
+##############################################
+[misc]
+borderstyle = "line"
+layout = "Inline" # [Inline, ArtOnTop, StatsOnTop]
+
+
+
+[misc.figletLogos]
+enable = false
+color  = "(YW)"
+font   = "slant"
+margin = [0, 0, 0,]
+
+[misc.imageMode]
+enable = false
+path   = ""
+scale  = 23
+margin = [0, 0, 1]
