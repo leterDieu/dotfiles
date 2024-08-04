@@ -12,7 +12,7 @@ shell: [fish](https://github.com/fish-shell/fish-shell)
 
 terminal: [foot](https://github.com/DanteAlighierin/foot)
 
-fetch: [fastfetch](https://github.com/fastfetch-cli/fastfetch)
+fetch: [catnap](https://github.com/iinsertNameHere/catnap)
 
 code editors: [neovim](https://github.com/neovim/neovim), [vscode](https://github.com/microsoft/vscode) and [zed](https://github.com/zed-industries/zed)
 
@@ -31,5 +31,7 @@ lock: [hyprlock](https://github.com/hyprwm/hyprlock/)
 color picker: [hyprpicker](https://github.com/hyprwm/hyprpicker)
 
 discord: [webcord](https://github.com/SpacingBat3/WebCord)
+
+logout menu: [wlogout](https://github.com/ArtsyMacaw/wlogout)
 
 file manager: -
