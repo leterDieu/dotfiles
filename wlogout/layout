@@ -14,7 +14,7 @@
     "label" : "logout",
     "action" : "loginctl terminate-user $USER",
     "text" : "Logout",
-    "keybind" : "a"
+    "keybind" : "l"
 }
 {
     "label" : "shutdown",
