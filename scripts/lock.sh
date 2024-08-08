@@ -1,2 +1,2 @@
-sleep 0.15
+sleep 0.5
 hyprlock
