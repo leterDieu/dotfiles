@@ -1,99 +1,153 @@
 {
+    // general  config
+
     "layer": "bottom",
     "position": "top",
     "spacing": 4,
     "reload_style_on_change": true,
 
 
+
+    // modules positioning
+
     "modules-left": [
 	    "battery",
-	    "memory",
 	    "cpu",
 	    "temperature",
 	    "tray"
     ],
 
     "modules-center": [
-	    "custom/wallpaper-changer",
-	    "custom/hyprshot",
-	    "custom/hyprpicker",
-	    "custom/hyprlock",
-	    "hyprland/workspaces"
+        "hyprland/workspaces"
     ],
 
     "modules-right": [
-	    "pulseaudio",
-	    "network",
-	    "clock",
+        "backlight",
+        "pulseaudio",
+        "network",
+        "clock",
 	    "hyprland/language"
     ],
 
-    "custom/wallpaper-changer": {
-	"format": " ",
-	"on-click": "$HOME/.config/scripts/wallpaper-changer.sh"
-    },
+    
+	   
 
-    "custom/hyprshot": {
-	"format": "󰹑 ",
-	"on-click": "hyprshot -m region -o Pictures/screenshots/",
-	"on-click-right": "hyprshot -m region --clipboard-only"
-    },
+    // modules left 
 
-    "custom/hyprpicker": {
-	"format": " ",
-	"on-click": "hyprpicker -a -f hex",
-	"on-click-right": "hyprpicker -a -f rgb"
-    },
-
-    "custom/hyprlock": {
-	"format": "󰌾 ",
-	"on-click": "hyprlock"
-    },
-	    
     "battery": {
-        "format": "{capacity}% {icon}",
+        "states": {
+            "good": 95,
+            "warning": 60,
+            "critical": 20
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
 
     "cpu": {
-	"format": "{usage}%  "
-    },
-
-    "memory": {
-	"format": "{percentage}%  "
+        "format": "{usage}% "
     },
 
     "temperature": {
-	"format": "{temperatureC}°C  "
+        "format": "{temperatureC}°C "
     },
 
-    "pulseaudio": {
-	"format": "{volume}%  " 
-    },
+    "tray":{
+		"icon-size":18,
+		"spacing": 10
+	},
 
-    "hyprland/language": {
-	"format-en": "en ",
-	"format-ru": "ru "
-    },
+
+
+    // modules center
 
     "hyprland/workspaces": {
-     "format": "{icon}",
-     "on-scroll-up": "hyprctl dispatch workspace e+1",
-     "on-scroll-down": "hyprctl dispatch workspace e-1"
-    },
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+       },
+   
 
-    "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
-    },
+
+    // modules right
+
+    "backlight": {
+		"tooltip": false,
+		"format": " {}%",
+		"interval":1,
+        "on-scroll-up": "brightnessctl set +5%",
+		"on-scroll-down": "brightnessctl set 5%-"
+	},
+
+    "pulseaudio": {
+		"tooltip": true,
+		"scroll-step": 5,
+        "format": "{icon}  {volume}%",
+        "format-muted": " muted",
+		"on-click":"wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"format-icons": {
+            "muted": [""],
+            "default": ["", "", ""]
+		}
+	},
 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{signalStrength}%  ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+    "clock": {
+        "format": "{:%a %d-%b %H:%M}",
+        "format-alt": "{:%d/%m/%Y %A}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "format": {
+                "months": "",
+                "today": "<span color='#ed8796'><b>{}</b></span>"
+            }
+        }
+    },
+
+    "hyprland/language": {
+	    "format-en": "en",
+	    "format-ru": "ru"
+    },
+
+
+
+
+
+
+    // unused custom modules 
+
+    "custom/wallpaper-changer": {
+	"format": "",
+	"on-click": "$HOME/.config/scripts/wallpaper-changer.sh"
+    },
+
+    "custom/hyprshot": {
+	"format": "󰹑",
+	"on-click": "hyprshot -m region -o Pictures/screenshots/",
+	"on-click-right": "hyprshot -m region --clipboard-only"
+    },
+
+    "custom/hyprpicker": {
+	"format": "",
+	"on-click": "hyprpicker -a -f hex",
+	"on-click-right": "hyprpicker -a -f rgb"
+    },
+
+    "custom/hyprlock": {
+	"format": "󰌾",
+	"on-click": "hyprlock"
     }
 
 }
